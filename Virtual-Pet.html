@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Pet 🐶</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .happy {
+      color: green;
+    }
+    .sad {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐶 Meet Your Pet!</h1>
+  <p id="petMood" class="sad">I’m feeling hungry... 😢</p>
+
+  <button onclick="feedPet()">🍕 Feed</button>
+  <button onclick="playWithPet()">🎾 Play</button>
+  <button onclick="giveWater()">💧 Water</button>
+
+  <script>
+    let mood = "sad";
+
+    function feedPet() {
+      mood = "happy";
+      updateMood("Yum! That was tasty! 😋");
+    }
+
+    function playWithPet() {
+      mood = "happy";
+      updateMood("Yay! That was fun! 🐾");
+    }
+
+    function giveWater() {
+      mood = "happy";
+      updateMood("Ahh! Refreshing! 💧");
+    }
+
+    function updateMood(message) {
+      const petMood = document.getElementById("petMood");
+      petMood.innerText = message;
+      petMood.className = mood;
+    }
+  </script>
+
+</body>
+</html>
